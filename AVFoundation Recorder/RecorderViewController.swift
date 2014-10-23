@@ -29,7 +29,8 @@ class RecorderViewController: UIViewController {
     @IBOutlet var playButton: UIButton!
     
     @IBOutlet var statusLabel: UILabel!
-    
+    @IBOutlet var rateSlider: UISlider!
+
     var meterTimer:NSTimer!
     
     var soundFileURL:NSURL?
@@ -66,6 +67,11 @@ class RecorderViewController: UIViewController {
     
     @IBAction func removeAll(sender: AnyObject) {
         deleteAllRecordings()
+    }
+
+
+    @IBAction func changeRate(sender: UISlider) {
+        self.player.rate = sender.value
     }
     
     @IBAction func record(sender: UIButton) {
@@ -122,6 +128,7 @@ class RecorderViewController: UIViewController {
     @IBAction func play(sender: UIButton) {
         play()
     }
+
     
     func play() {
         
@@ -136,9 +143,13 @@ class RecorderViewController: UIViewController {
             }
         }
         player.delegate = self
-        player.prepareToPlay()
         player.volume = 1.0
+        player.enableRate = true
+        player.rate = rateSlider.value
+        player.numberOfLoops = 0
+        player.prepareToPlay()
         player.play()
+        println(player.rate)
     }
     
 

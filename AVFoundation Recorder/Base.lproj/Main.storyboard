@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZfM-S9-gIr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZfM-S9-gIr">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -68,12 +68,19 @@
                                     <action selector="stop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OVF-bL-Q72"/>
                                 </connections>
                             </button>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.25" maxValue="2.5" translatesAutoresizingMaskIntoConstraints="NO" id="JLP-wq-QUp">
+                                <rect key="frame" x="14" y="373" width="241" height="31"/>
+                                <connections>
+                                    <action selector="changeRate:" destination="BYZ-38-t0r" eventType="valueChanged" id="jA3-p2-bGG"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ho9-1u-dEg"/>
                     <connections>
                         <outlet property="playButton" destination="kI1-0Y-yEN" id="kru-li-nbE"/>
+                        <outlet property="rateSlider" destination="JLP-wq-QUp" id="L3r-TB-e1L"/>
                         <outlet property="recordButton" destination="YWe-rD-5VP" id="ew0-OE-UxJ"/>
                         <outlet property="statusLabel" destination="epE-QD-OIR" id="3dN-pr-aeO"/>
                         <outlet property="stopButton" destination="UPv-pV-Fnz" id="sl5-3S-Mic"/>
